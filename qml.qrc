@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>data.qml</file>
+        <file>WelcomePage.qml</file>
+        <file>LoadData.qml</file>
+        <file>DataModel.qml</file>
+        <file>DataPage.qml</file>
+        <file>PatientButton.qml</file>
+        <file>NavigationPage.qml</file>
+        <file>share/lib/ButtonOne.qml</file>
+        <file>share/lib/ButtonToggle.qml</file>
+        <file>share/lib/FuzzyPanel.qml</file>
+        <file>ButtonOne.qml</file>
+        <file>ButtonToggle.qml</file>
+        <file>FuzzyPanel.qml</file>
+        <file>SystemMenu.qml</file>
+        <file>WindowAdjust.qml</file>
+        <file>ThreeDModelRec.qml</file>
+        <file>ToolPage.qml</file>
+        <file>RegistrationPage.qml</file>
+        <file>FlatButton.qml</file>
+        <file>PaperRipple.qml</file>
+    </qresource>
+</RCC>
