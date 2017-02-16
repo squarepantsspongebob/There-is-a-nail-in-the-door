@@ -71,17 +71,18 @@ Rectangle {
                 delegate: Item{
                     id: item1
                     width: model.r*rec1.bili+20; height: firstRow.height
-                    Rectangle{
+                    FlatButton{
                         width: model.r*rec1.bili; height: width
                         anchors.centerIn: parent
-                        color: toolPageAdapter.clickedCircle===model.num?(toolPageAdapter.finishedCircle ===model.num?"#f8e81b":"darkgray"):"#d8d8d8"
-                        radius: width/2
-                        MouseArea{
-                            anchors.fill: parent
-                            onClicked: {
-                                toolPageAdapter.clickedCircle = model.num
-                                toolPageAdapter.finishedCircle = 0
-                            }
+                        bgColor2: toolPageAdapter.clickedCircle===model.num?(toolPageAdapter.finishedCircle ===model.num?"#4FEC10":"darkgray"):"#d8d8d8"
+                        bgRadius: width/2
+                        onClickOpacity: 1
+                        onClickColor: "darkgray"
+                        afterClickColor: "darkgray"
+                        fromCenter: true
+                        onClicked: {
+                            toolPageAdapter.clickedCircle = model.num
+                            toolPageAdapter.finishedCircle = 0
                         }
                     }
                     Text{
@@ -105,25 +106,15 @@ Rectangle {
                     FlatButton{
                         width: model.r*rec1.bili; height: width
                         anchors.centerIn: parent
-                        bgColorEnable: toolPageAdapter.clickedCircle===model.num?(toolPageAdapter.finishedCircle ===model.num?"#f8e81b":"darkgray"):"#d8d8d8"
+                        bgColor2: toolPageAdapter.clickedCircle===model.num?(toolPageAdapter.finishedCircle ===model.num?"#f8e81b":"darkgray"):"#d8d8d8"
                         bgRadius: width/2
+                        onClickColor: "darkgray"
+                        onClickOpacity: 1
+                        afterClickColor: "darkgray"
+                        fromCenter: true
                         onClicked: {
                             toolPageAdapter.clickedCircle = model.num
                             toolPageAdapter.finishedCircle = 0
-                        }
-                    }
-
-                    Rectangle{
-                        width: model.r*rec1.bili; height: width
-                        anchors.centerIn: parent
-                        color: toolPageAdapter.clickedCircle===model.num?(toolPageAdapter.finishedCircle ===model.num?"#f8e81b":"darkgray"):"#d8d8d8"
-                        radius: width/2
-                        MouseArea{
-                            anchors.fill: parent
-                            onClicked: {
-                                toolPageAdapter.clickedCircle = model.num
-                                toolPageAdapter.finishedCircle = 0
-                            }
                         }
                     }
                     Text{
@@ -141,7 +132,7 @@ Rectangle {
             Text{
                 anchors.centerIn: parent
                 text: toolPageAdapter.finishedCircle===0?"":toolPageAdapter.finishedCircle
-                color: "#f8e81b"
+                color: "#4FEC10"
                 font.pixelSize: 30
             }
         }

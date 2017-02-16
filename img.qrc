@@ -106,5 +106,7 @@
         <file>Img/icon/LoadDataHighlight.png</file>
         <file>Img/2-12/setPage.jpg</file>
         <file>Img/2-12/quitPage.jpg</file>
+        <file>Img/icon/ldFalse.png</file>
+        <file>Img/icon/ldTrue.png</file>
     </qresource>
 </RCC>

@@ -14,6 +14,21 @@ Item {
     property color bgColorEnable: "#00999999"
     property color bgColorDisEnable: "#1a999999"
     property alias bgRadius: background.radius
+    property var onClickOpacity: 0.25
+    property color onClickColor: "#de000000"
+    property color afterClickColor: bgColorEnable
+    property bool fromCenter: false
+    property var dp: 0.75
+    property alias bgColor2: background.color
+
+    onAfterClickColorChanged: {
+        ripple.changeColor()
+    }
+
+//    onBgColorEnableChanged: {
+//        console.log(model.num)
+//        background.color = bgColorEnable
+//    }
 
     signal clicked
 
@@ -21,7 +36,8 @@ Item {
         id: background
         anchors.fill: parent
         radius: 3 * dp
-        color: button.enabled ? bgColorEnable : bgColorDisEnable
+        //color: button.enabled ? bgColorEnable : bgColorDisEnable
+        color: "#00999999"
     }
 
     Text {
@@ -44,8 +60,10 @@ Item {
 
     PaperRipple {
         id: ripple
-        radius: 3 * dp
+        radius: bgRadius
         mouseArea: mouseArea
+        color: onClickColor
+        fromCenterPR: fromCenter
     }
 
     MouseArea {

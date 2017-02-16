@@ -8,7 +8,7 @@ Window {
     visible: true
     width: 1920
     height: 1080
-    title: qsTr("Hello World")
+    title: qsTr("Navigation")
     flags: Qt.FramelessWindowHint|Qt.WindowSystemMenuHint|Qt.WindowMinimizeButtonHint|Qt.Window
 
     property color topBottomBarColor: "#323233"

@@ -8,11 +8,13 @@ Item {
     property alias radius: mask.radius
     property color color: "#de000000"
     property alias mouseArea: connections.target
+    property var dp: 0.75
+    property bool fromCenterPR: false
+    signal changeColor()
 
     Rectangle {
         id: mask
         anchors.fill: parent
-        color: "yellow"
         visible: false
     }
 
@@ -20,7 +22,6 @@ Item {
         id: container
         anchors.fill: parent
         visible: false
-//        visible: true
     }
 
     OpacityMask {
@@ -35,7 +36,7 @@ Item {
         Rectangle {
             id: ink
             radius: 0
-            opacity: 0.25
+            opacity: onClickOpacity
             color: control.color
             property int startX
             property int startY
@@ -55,7 +56,10 @@ Item {
             SequentialAnimation {
                 id: fadeAnimation
                 NumberAnimation { target: ink; property: "opacity"; from: 0.25; to: 0; duration: 312; }
-                ScriptAction { script: ink.destroy() }
+                ScriptAction {
+                    script: {ink.destroy();
+                    }
+                }
             }
 
             Connections {
@@ -81,10 +85,12 @@ Item {
     Connections {
         id: connections
         onPressed: {
-            var wave = ripple.createObject(container, {
-                startX: target.mouseX, startY: target.mouseY,
-                maxRadius: furthestDistance(target.mouseX, target.mouseY)
-            })
+            if (fromCenter){
+                var wave = ripple.createObject(container, { startX: mouseArea.x+mouseArea.width/2, startY: mouseArea.y+mouseArea.height/2, maxRadius: furthestDistance(mouseArea.mouseX, mouseArea.mouseY)})
+            }
+            else{
+                var wave = ripple.createObject(container, { startX: target.mouseX, startY: target.mouseY, maxRadius: furthestDistance(target.mouseX, target.mouseY)})
+            }
         }
     }
 
@@ -100,8 +106,8 @@ Item {
     Keys.enabled: true
     Keys.onSpacePressed: {
         var wave = ripple.createObject(container, {
-            startX: mouseArea.x+mouseArea.width/2, startY: mouseArea.y+mouseArea.height/2,
-            maxRadius: furthestDistance(mouseArea.mouseX, mouseArea.mouseY)
-        })
+                                           startX: mouseArea.x+mouseArea.width/2, startY: mouseArea.y+mouseArea.height/2,
+                                           maxRadius: furthestDistance(mouseArea.mouseX, mouseArea.mouseY)
+                                       })
     }
 }

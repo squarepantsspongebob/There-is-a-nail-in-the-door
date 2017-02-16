@@ -71,8 +71,6 @@ Rectangle {
             KeyNavigation.down: cranialRec
             Keys.enabled: true
             Keys.onSpacePressed: {
-                console.log(1)
-                cranialRec1.ripple.mouseArea.onPressed()
                 rootItem.typeSignal(1)
             }
             Keys.onEnterPressed: {
@@ -108,12 +106,12 @@ Rectangle {
         FlatButton{
             id: cranialRec1
             height: parent.height; width: height
-            bgColorEnable: "darkgray"
-            //focus?"darkgray":cranialMouseArea.containsMouse?"darkgray":"gray"
-            bgRadius: 30
             text: "Cranial"
             textPixelSize: 50
-            onClicked: rootItem.typeSignal(1)
+            bgColorEnable: "darkgray"
+            bgRadius: 30
+            onClickColor: "yellow"
+            afterClickColor: bgColorEnable
         }//
     }
 }
