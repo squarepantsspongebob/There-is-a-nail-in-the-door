@@ -8,6 +8,8 @@ Rectangle {
     property string imageHover: ""
     property string imageUnenable: ""
     property var mouseArea
+    property alias btnState:  myRect.state
+    property alias mouseArea1: mouseArea
     signal clicked
     color: "transparent"
 
@@ -28,8 +30,8 @@ Rectangle {
             myRect.state=="hover"? myRect.state="default":1
         }
         onClicked: {
-            myRect.state =="clicked"? myRect.state = "hover": myRect.state = "clicked"
             parent.clicked()
+            myRect.state =="clicked"? myRect.state = "hover": myRect.state = "clicked"
         }
     }
     states: [
@@ -54,6 +56,5 @@ Rectangle {
                 source: imageHover
             }
         }
-
     ]
 }

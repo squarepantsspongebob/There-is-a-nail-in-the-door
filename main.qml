@@ -23,28 +23,35 @@ Window {
     StackLayout{
         id: layout
         anchors.fill: parent
-        currentIndex: 0
+        currentIndex: 2
+
+        //0
         WelcomePage{
             width: parent.width; height: parent.height
             onTypeSignal: {
                 layout.currentIndex = msg
             }
         }
+
+        //1
         LoadData{
             width: parent.width; height: parent.height
             onTypeSignal: layout.currentIndex = msg
         }
 
+        //2
         DataPage{
             width: parent.width; height: parent.height
             onTypeSignal: layout.currentIndex = msg
         }
 
+        //3
         ToolPage{
             id: toolPage
             onTypeSignal: layout.currentIndex = msg
         }
 
+        //4
         RegistrationPage{
             width: parent.width; height: parent.height
             onTypeSignal: layout.currentIndex = msg

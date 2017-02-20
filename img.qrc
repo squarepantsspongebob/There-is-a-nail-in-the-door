@@ -24,7 +24,6 @@
         <file>Img/ireachBegin.jpg</file>
         <file>Img/ireachFail.jpg</file>
         <file>Img/ireachSuccess.jpg</file>
-        <file>Img/lock.png</file>
         <file>Img/mainTools.zip</file>
         <file>Img/orangeLightOffBtn.png</file>
         <file>Img/orangeLightOnBtn.png</file>
@@ -96,9 +95,6 @@
         <file>Img/systemIcon/snapshotBtnHover.png</file>
         <file>Img/folder.png</file>
         <file>Img/loadFailImg.png</file>
-        <file>Img/2-12/patient-1.jpg</file>
-        <file>Img/2-12/patient-2.jpg</file>
-        <file>Img/2-12/patient-3.jpg</file>
         <file>Img/mainTool/navigationDistance.png</file>
         <file>Img/mainTool/navigationExtend.png</file>
         <file>Img/mainTool/navigationMeasure.png</file>
@@ -108,5 +104,10 @@
         <file>Img/2-12/quitPage.jpg</file>
         <file>Img/icon/ldFalse.png</file>
         <file>Img/icon/ldTrue.png</file>
+        <file>Img/icon/scrollBarIndicator.png</file>
+        <file>Img/icon/xiala.png</file>
+        <file>Img/icon/close.png</file>
+        <file>Img/icon/search.png</file>
+        <file>Img/icon/loadFail.png</file>
     </qresource>
 </RCC>

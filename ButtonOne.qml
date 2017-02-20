@@ -27,11 +27,10 @@ Rectangle {
         }
         onPressed: {
             myRect.state = "clicked"
-            parent.clicked()
         }
         onReleased: {
             if (mouseArea.containsMouse)
-            {myRect.state = "hover"}
+            {myRect.state = "hover"; parent.clicked()}
             else
             {myRect.state = "default"}
         }

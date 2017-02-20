@@ -36,11 +36,11 @@ Rectangle{
                     font.pixelSize: 14; x: 136
                 }
                 Text{
-                    text:"透明度"
+                    text:"透明度";
                     font.pixelSize: 14; x: 184
                 }
                 Text{
-                    text:"轮廓线"
+                    text:"轮廓线";
                     font.pixelSize: 14; x: 239
                 }
             }

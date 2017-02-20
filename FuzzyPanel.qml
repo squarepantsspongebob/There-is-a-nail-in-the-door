@@ -22,11 +22,13 @@ Rectangle{
     width: 200
     height: 200
     clip: true
-    radius: 3
+    radius: 13
 
     // 属性
-    property Item target : panelBg  // 模糊源
+    property Item target  // 模糊源
     property bool dragable : true   // 是否可拖动
+    property alias blurRadius: blur.radius
+    property alias recRadius: panelFg.radius
 
     // 毛玻璃效果
     FastBlur {
